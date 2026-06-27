@@ -22,7 +22,7 @@
 
     box-sizing:border-box;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial";
 
     outline:none;
     border:none;
@@ -92,7 +92,7 @@ header .fa-bars{
 
 header .logo{
     font-size:3rem;
-    font-family:Allegretto Script One;
+    font-family: "Allegretto Script One";
     color:var(--lobster-pink);
     font-weight:bolder;
 }
@@ -224,7 +224,7 @@ COLLECTION TITLE
 .collection-title h1{
     color:var(--linen);
 
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
     font-size:3rem;
     font-weight:900;
 
