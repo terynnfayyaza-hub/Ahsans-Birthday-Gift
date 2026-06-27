@@ -1,0 +1,306 @@
+/* ==========================================
+   COLOR PALETTE
+========================================== */
+:root{
+    --aldmond-silk: #e3b5a4;
+    --lobster-pink: #d44d5c;
+    --wine-plum: #773344;
+    --linen: #f5e9e2;
+
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: #aaa;
+    --light-gray-color: #eee;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+*{
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline:none;
+    border:none;
+
+    text-decoration:none;
+
+    transition:.4s linear;
+}
+
+html{
+    font-size:100%;
+    scroll-behavior:smooth;
+    scroll-padding-top:6rem;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+
+    background:url("star2-bg.PNG");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#fff;
+
+    padding:1.5rem 4%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:1000;
+
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header #toggler{
+    display:none;
+}
+
+header .fa-bars{
+    font-size:1.5rem;
+    color:black;
+    padding:.5rem 1.5rem;
+    cursor:pointer;
+    display:none;
+}
+
+header .logo{
+    font-size:3rem;
+    font-family:Allegretto Script One;
+    color:var(--lobster-pink);
+    font-weight:bolder;
+}
+
+header .logo:hover{
+    font-size:3.1rem;
+    color:black;
+}
+
+header .icons{
+    display:flex;
+    gap:1rem;
+}
+
+header .icons a{
+    font-size:1.3rem;
+    color:black;
+}
+
+header .icons a:hover{
+    font-size:1.4rem;
+    color:var(--lobster-pink);
+}
+
+/* ==========================================
+   SPOTIFY CONTAINER
+========================================== */
+.spotify-container{
+    width:95%;
+    max-width:1200px;
+
+    margin-top:10rem;
+    margin-bottom:4rem;
+
+    background:var(--linen);
+    border-radius:30px;
+    overflow:hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+.profile-section{
+    width:100%;
+    min-height:15rem;
+
+    background:
+    linear-gradient(180deg,#c88b8b 0%,#875858 65%,#5b3737 100%);
+
+    display:flex;
+    align-items:flex-end;
+    gap:3rem;
+
+    padding: 3rem 4rem;
+}
+
+.profile-pic{
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.profile-text{
+    padding-bottom:2rem;
+}
+
+.small-text{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    margin-bottom:.8rem;
+}
+
+.profile-text h1{
+    color:white;
+    font-size:6rem;
+    font-weight:900;
+    line-height:1;
+    font-family: "Glorify DEMO", cursive;
+}
+
+/* ==========================================
+   PLAYLIST SECTION (DARKER THAN PROFILE)
+========================================== */
+
+.playlist-section{
+    padding: 2.5rem 3rem 4rem;
+
+    /* NEW: darker than profile gradient */
+    background: #4b2d2e;
+}
+
+/* "Public Playlists" text */
+.playlist-section h2{
+    font-size:2rem;
+
+    color:white;
+
+    margin-bottom:2rem;
+
+    font-weight:800;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   PLAYLIST CARD TEXT (FORCE ARIAL)
+========================================== */
+.playlist-card a{
+    margin-top:1rem;
+    width:fit-content;
+
+    font-family: Arial, Helvetica, sans-serif;  /* UPDATED */
+    font-size:1.2rem;
+
+    color:white; /* Spotify-style contrast */
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.playlist-card a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================
+   PLAYLIST GRID
+========================================== */
+.playlist-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:2rem;
+}
+
+.playlist-card{
+    display:flex;
+    flex-direction:column;
+}
+
+.playlist-card img{
+    width:100%;
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.playlist-card img:hover{
+    transform:scale(1.03);
+}
+
+.playlist-card a{
+    margin-top:1rem;
+    width:fit-content;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.2rem;
+    color: linen; /* fixed invalid var(linen) */
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.playlist-card a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media(max-width:768px){
+    .profile-section{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .profile-text{
+        padding-bottom:0;
+    }
+
+    .profile-text h1{
+        font-size:4rem;
+    }
+
+    .profile-pic{
+        width:180px;
+        height:180px;
+    }
+
+    .playlist-grid{
+        grid-template-columns:1fr;
+    }
+}

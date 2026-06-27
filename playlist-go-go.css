@@ -1,0 +1,530 @@
+/* ==========================================
+   COLOR PALETTE
+========================================== */
+:root{
+    --aldmond-silk: #d8c6af;   /* warm wood / skin tone */
+    --linen:        #f3eee5;   /* wall color */
+    --wine-plum:    #6a5c50;   /* muted brown-gray */
+    --player-bg:    #7a8070;   /* sage green floor */
+    --player-bg-dark:#505448;  /* dark sage/charcoal */
+
+    --lobster-pink: #d44d5c;
+
+    --white-color:#fff;
+    --black-color:#000;
+    --gray-color:#aaa;
+    --light-gray-color:#eee;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+*{
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline:none;
+    border:none;
+
+    text-decoration:none;
+
+    transition:.4s linear;
+}
+
+html{
+    font-size:100%;
+    scroll-behavior:smooth;
+    scroll-padding-top:6rem;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+
+    background:url("star2-bg.PNG");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#fff;
+
+    padding:1.5rem 4%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:1000;
+
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header #toggler{
+    display:none;
+}
+
+header .fa-bars{
+    font-size:1.5rem;
+    color:black;
+    padding:.5rem 1.5rem;
+    cursor:pointer;
+    display:none;
+}
+
+header .logo{
+    font-size:3rem;
+    font-family:Allegretto Script One;
+    color:var(--lobster-pink);
+    font-weight:bolder;
+}
+
+header .logo:hover{
+    font-size:3.1rem;
+    color:black;
+}
+
+header .icons{
+    display:flex;
+    gap:1rem;
+}
+
+header .icons a{
+    font-size:1.3rem;
+    color:black;
+}
+
+header .icons a:hover{
+    font-size:1.4rem;
+    color:var(--lobster-pink);
+}
+
+/* ==========================================
+   SPOTIFY CONTAINER
+========================================== */
+.spotify-container{
+    width:95%;
+    max-width:1200px;
+
+    margin-top:10rem;
+    margin-bottom:4rem;
+
+    background:var(--aldmond-silk);
+    border-radius:30px;
+    overflow:hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+.profile-section{
+    width:100%;
+    min-height:15rem;
+
+    background:
+    linear-gradient(
+        180deg,
+        #d8c6af 0%,
+        #a4ab97 60%,
+        #505448 100%
+    );
+
+    display:flex;
+    align-items:flex-end;
+    gap:3rem;
+
+    padding: 3rem 4rem;
+}
+
+.profile-pic{
+    width:220px;
+    height:220px;
+
+    border-radius:3%; /* changed from 50% circle to rounded square */
+
+    object-fit:cover;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+.profile-text{
+    padding-bottom:2rem;
+}
+
+.small-text{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    margin-bottom:.8rem;
+}
+
+.profile-text h1{
+    color:white;
+    font-size:6rem;
+    font-weight:900;
+    line-height:1;
+    font-family: "Glorify DEMO", cursive;
+
+    margin-bottom:0.8rem;
+}
+
+.profile-text .small-text:last-child{
+    margin-top:0.2rem;
+}
+
+/* ==========================================
+   PLAYLIST SECTION (DARKER THAN PROFILE)
+========================================== */
+
+.playlist-section{
+    padding: 2.5rem 3rem 4rem;
+
+    background:var(--player-bg-dark);
+}
+
+/* "Public Playlists" text */
+.playlist-section p{
+    font-size:1.2rem;
+
+    color:white;
+
+    margin-bottom:2rem;
+
+    font-weight:800;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   PLAYLIST CARD TEXT (FORCE ARIAL)
+========================================== */
+.playlist-card a{
+    margin-top:1rem;
+    width:fit-content;
+
+    font-family: Arial, Helvetica, sans-serif;  /* UPDATED */
+    font-size:1.2rem;
+
+    color:white; /* Spotify-style contrast */
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.playlist-card a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================
+   PLAYLIST GRID
+========================================== */
+.playlist-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:2rem;
+}
+
+.playlist-card{
+    display:flex;
+    flex-direction:column;
+}
+
+.playlist-card img{
+    width:100%;
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.playlist-card img:hover{
+    transform:scale(1.03);
+}
+
+.playlist-card a{
+    margin-top:1rem;
+    width:fit-content;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.2rem;
+    color: linen; /* fixed invalid var(linen) */
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.playlist-card a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media(max-width:768px){
+    .profile-section{
+        display:flex;
+        align-items:center;
+        gap:3rem;
+        padding: 3rem 4rem;
+    }
+
+    .profile-text{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .profile-text{
+        padding-bottom:0;
+    }
+
+    .profile-text h1{
+        font-size:4rem;
+    }
+
+    .profile-pic{
+    width:160px;
+    height:160px;
+
+    border-radius:20%;
+    }
+
+    .playlist-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ==========================================
+   SONG CONTROLS (optional, minimal styling)
+========================================== */
+.playlist-controls{
+    display:flex;
+    gap:1rem;
+    padding:1rem 3rem 0;
+}
+
+.btn-playlist{
+    background:none;
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+}
+
+/* ==========================================
+   SONG HEADER
+========================================== */
+.song-header{
+    display:grid;
+    grid-template-columns:40px 1fr 60px;
+    padding:0.8rem 3rem;
+
+    color:#ddd;
+    font-size:0.85rem;
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* ==========================================
+   SONG LIST CONTAINER
+========================================== */
+.song-list{
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================
+   EACH SONG ROW (SPOTIFY STYLE)
+========================================== */
+.song{
+    display:grid;
+    grid-template-columns:40px 45px 1fr 60px;
+    align-items:center;
+
+    padding:0.8rem 3rem;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+    color:white;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* hover highlight */
+.song:hover{
+    background:#6f7565;
+}
+
+/* number / play icon */
+.song .num{
+    text-align:center;
+    font-weight:700;
+    color:#ddd;
+}
+
+.song:hover .num{
+    color:transparent;
+    position:relative;
+}
+
+.song:hover .num::after{
+    content:"▶";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+}
+
+/* SMALL ALBUM IMAGE (FIX FOR 1080x1080) */
+.song img{
+    width:32px;
+    height:32px;
+
+    object-fit:cover;
+    border-radius:6px;
+}
+
+/* title */
+.song .title{
+    font-size:0.95rem;
+    font-weight:600;
+    color:white;
+}
+
+/* duration */
+.song .duration{
+    text-align:right;
+    font-size:0.85rem;
+    color:#cfcfcf;
+}
+
+/* ==========================================
+   OPTIONAL: ACTIVE SONG STATE (for JS)
+========================================== */
+.song.active{
+    background:#6f7565;
+}
+
+/* ==========================================
+   BOTTOM PLAYER BUTTONS (MATCH SONG BACKGROUND)
+========================================== */
+
+.bottom-player{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+
+    background: var(--player-bg-dark);
+
+    padding:2rem 3rem 1rem;
+}
+
+/* base button */
+.player-btn{
+    background:var(--player-bg);
+    color: white;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+    transition:0.2s;
+}
+
+/* hover effect */
+.player-btn:hover{
+    background: #34372f;
+    transform:scale(1.05);
+}
+
+/* play button bigger */
+.player-btn.play{
+    width:55px;
+    height:55px;
+    font-size:1.3rem;
+}
+
+/* ==========================================
+   PROGRESS BAR SECTION
+========================================== */
+
+.progress-container{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+    padding:0 3rem 2rem;
+
+    background: var(--player-bg-dark);
+
+    color:white;
+    font-size:0.85rem;
+}
+
+#progress{
+    flex:1;
+    cursor:pointer;
+
+    height:4px;
+    accent-color:var(--aldmond-silk);
+}
+
+/* ==========================================
+   VOLUME BAR SECTION
+========================================== */
+#volume{
+    width:100px;
+    cursor:pointer;
+
+    height:4px;
+
+    accent-color: var(--aldmond-silk);
+}
+
+.volume-icon {
+    margin-left: 15px;
+    margin-right: 8px;
+    font-size: 1rem;
+}
