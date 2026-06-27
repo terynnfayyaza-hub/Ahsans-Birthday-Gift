@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gift</title>
+
+    <link rel="stylesheet" href="birthday.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- BACKROUND MUSIC -->
+ <audio id="bgMusic" loop>
+        <source src="Sanx - NOSE KE TIENE W @hanxol0 (Official visualizer).mp3" type="audio/mpeg">
+</audio>
+
+<!-- HEADER START -->
+<header>
+
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">
+    Sincerely, from Fayyaz<span>.</span>
+    </a>
+
+    <div class="icons">
+        <a href="favorite.html" class="fas fa-heart"></a>
+        <p>|</p>
+        <a href="playlist.html" class="fas fa-music"></a>
+        <p>|</p>
+        <a href="game.html" class="fas fa-dice"></a>
+        <p>|</p>
+        <a href="photobooth.html" class="fas fa-camera"></a>
+        <p>|</p>
+        <i class="fas fa-volume-high volume-icon"></i>
+            <input
+                type="range"
+                id="volumeSlider"
+                min="0"
+                max="100"
+                value="50"
+            >
+    </div>
+
+</header>
+
+<!-- HOME SECTION START -->
+<section class="home" id="home">
+
+    <div class="content">
+
+        <h1>Happy Birthday, My Love!</h1>
+
+        <span>
+            I hope you like this web that I made for you hehe
+        </span>
+
+        <p>
+            I wish you a happy birthday and may all your hopes
+            and dreams come true this year ♥︎
+            To more happiness and joy to you sayangg!
+        </p>
+
+        <p>
+            <i>P.s: Click this mail pweaseeeee hehe:</i>
+        </p>
+
+        <a href="letter.html" class="btn">💌</a>
+
+    </div>
+
+</section>
+
+<!-- JAVA SCRIPT -->
+<script>
+    window.addEventListener("load", () => {
+
+        const music =
+            document.getElementById("bgMusic");
+
+        if (
+            sessionStorage.getItem("playMusic")
+            === "true"
+        ) {
+
+            music.play();
+
+            sessionStorage.removeItem(
+                "playMusic"
+            );
+        }
+    });
+</script>
+
+<!-- MUSIC -->
+<script>
+
+const music =
+    document.getElementById("bgMusic");
+
+const slider =
+    document.getElementById("volumeSlider");
+
+/* Default volume */
+
+music.volume = 0.5;
+
+/* Update volume */
+
+slider.addEventListener("input", function(){
+
+    music.volume = this.value / 100;
+
+});
+
+</script>
+
+<!-- CONFETTI EFFECTS -->
+<script>
+
+window.addEventListener("load", function() {
+
+    if (sessionStorage.getItem("showConfetti")) {
+
+        /* Initial big burst */
+
+        confetti({
+            particleCount: 250,
+            spread: 150,
+            origin: { y: 0.6 }
+        });
+
+        /* Side confetti for 3 seconds */
+
+        const duration = 3000;
+        const end = Date.now() + duration;
+
+        (function frame() {
+
+            confetti({
+                particleCount: 3,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 }
+            });
+
+            confetti({
+                particleCount: 3,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 }
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+
+        })();
+
+        /* Prevent replay on refresh */
+
+        sessionStorage.removeItem("showConfetti");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
