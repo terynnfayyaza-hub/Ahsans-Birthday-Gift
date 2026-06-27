@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="letter.css" />
+    <title>My Letter for You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- calendar link css -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <title>Mt Letter for You</title>
+  </head>
+  <body>
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="mail.PNG" alt="Envelope" id="envelope" />
+      <p> Letter for You </p>
+    </div>
+
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+
+    <!-- SCREEN 1 -->
+    <div id="screen1">
+      <h1 id="letter-title">Will you go out on a date with me?</h1>
+
+      <img src="husky.gif" class="husky" id="letter-husky"/>
+
+      <div class="buttons" id="letter-buttons">
+          <img src="yes-mine.PNG" class="btn yes-btn" alt="Yes"/>
+
+          <div class="no-wrapper">
+              <img src="no-mine.PNG" class="btn no-btn" alt="No"/>
+          </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2 -->
+    <div id="screen2" class="screen-hidden">
+      <h1>No way. NO WAY!</h1>
+
+      <p class="screen-text">
+          I was about to cry myself to sleep.
+      </p>
+
+      <img src="dog-flower.gif" class="dog-flower">
+
+      <button id="toDateBtn" class="next-btn">
+          okay okay! ⌯⌲
+      </button>
+    </div>
+
+    <!-- SCREEN 3 -->
+    <div id="screen3" class="screen-hidden">
+      <h1> Sooooo... When are you free? </h1>
+
+      <div class="calendar-container">
+        <input type="text" id="datePicker" placeholder="Select a date">
+      </div>
+
+      <select id="timePicker">
+          <option value="">
+              Select a time...
+          </option>
+
+          <option>5:00 PM</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+          <option>9:00 PM</option>
+      </select>
+
+      <button id="toFinalBtn" class="next-btn">
+          Next ⌯⌲
+      </button>
+    </div>
+
+    <!-- SCREEN 4 -->
+    <div id="screen4" class="screen-hidden">
+      <h1 id="final-title">
+          It's a date! 💌
+      </h1>
+
+      <img src="cat_dance.gif"
+          class="husky"
+          id="final-cat">
+
+      <div class="date-card">
+
+          <p class="date-label">
+              📅 WHEN
+          </p>
+
+          <p id="selected-date-display"
+            class="date-info">
+          </p>
+
+      </div>
+
+      <div class="final-buttons">
+
+          <button id="calendarBtn"
+                  class="action-btn">
+              Add to Calendar
+          </button>
+
+          <button id="homeBtn"
+                  class="action-btn">
+              Back Home
+          </button>
+
+      </div>
+    </div>
+  </div>
+
+    <script src="letterscript.js"></script>
+  </body>
+
+<!-- =======================
+    JAVA SCRIPT
+    ======================= -->
+<script>
+
+window.addEventListener("load", function(){
+
+    if(
+        localStorage.getItem(
+            "birthdayUnlocked"
+        ) !== "true"
+    ){
+
+        window.location.href =
+            "index.html";
+
+    }
+
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</html>
