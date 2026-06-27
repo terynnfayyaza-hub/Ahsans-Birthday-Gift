@@ -1,3 +1,27 @@
+/* ==========================================
+   CUSTOM FONTS
+========================================== */
+@font-face {
+    font-family: "Glorify DEMO";
+    src: url("font/Glorifydemo-BW3J3.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Allegretto Script One";
+    src: url("font/Allegretto Script One Allegretto Script One.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("font/ARIAL.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root{
     --aldmond-silk: #e3b5a4;
     --lobster-pink: #d44d5c;
@@ -188,7 +212,7 @@ p {
 
 .screen-text{
     font-size:1.3rem;
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
     margin-bottom:10px;
     color:var(--wine-plum);
 }
@@ -250,7 +274,7 @@ p {
 
 .flatpickr-calendar,
 .flatpickr-calendar *{
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 }
 
 /* Pink border around calendar */
@@ -283,7 +307,7 @@ p {
     border-radius:10px;
 
     font-size:1rem;
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 
     background:white;
     color:var(--wine-plum);
@@ -392,7 +416,7 @@ p {
 .date-label{
     font-size:1.1rem;
     font-weight:700;
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 
     margin-bottom:10px;
 }
@@ -400,7 +424,7 @@ p {
 .date-info{
     font-size:1.1rem;
     line-height:1.2;
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 }
 
 .final-buttons{
