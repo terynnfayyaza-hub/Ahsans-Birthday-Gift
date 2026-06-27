@@ -245,7 +245,7 @@ header .icons a:hover{
 }
 
 .card-back p{
-    font-family: "Arial";
+    font-family: "Arial", Helvetica, sans-serif;
     text-transform:none;
 
     line-height:1.7;
