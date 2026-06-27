@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Unlock Me </title>
+
+    <!-- font awesome cdn link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- custom css file link -->
+     <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<!-- =================================== -->
+<!-- PASSWORD SECTION -->
+<!-- =================================== -->
+    <div class="container" id="lockScreen">
+
+    <div class="password-display" id="display"></div>
+
+    <div class="keypad">
+        <button class="key" onclick="addNumber('1')">1</button>
+        <button class="key" onclick="addNumber('2')">2</button>
+        <button class="key" onclick="addNumber('3')">3</button>
+
+        <button class="key" onclick="addNumber('4')">4</button>
+        <button class="key" onclick="addNumber('5')">5</button>
+        <button class="key" onclick="addNumber('6')">6</button>
+
+        <button class="key" onclick="addNumber('7')">7</button>
+        <button class="key" onclick="addNumber('8')">8</button>
+        <button class="key" onclick="addNumber('9')">9</button>
+
+        <button class="key" onclick="clearCode()">⌫</button>
+        <button class="key" onclick="addNumber('0')">0</button>
+        <button class="key" onclick="resetCode()">C</button>
+    </div>
+
+    <div class="enter-container">
+        <button class="enter-btn" onclick="checkCode()">ENTER</button>
+    </div>
+
+    </div>
+
+    <!-- =================================== -->
+    <!-- Notification Alert Wrong Password Pop Up -->
+    <!-- =================================== -->
+    <div id="notification" class="notification">
+
+    <div class="notification-box">
+
+        <h2>Wrong Password 💔</h2>
+
+        <p>
+            That wasn't our special date.
+            Try again, sayangg.
+        </p>
+
+        <button onclick="closeNotification()">
+            Try Again
+        </button>
+
+    </div>
+
+    </div>
+
+
+<!-- =================================== -->
+<!-- JAVA SCRIPT TO MAKE THE TRANSITION WORK -->
+<!-- =================================== -->
+    <script>
+
+    let enteredCode = "";
+
+    const correctCode = "30042026";
+
+    function updateDisplay() {
+        document.getElementById("display").textContent = enteredCode;
+    }
+
+    function addNumber(number) {
+        enteredCode += number;
+        updateDisplay();
+    }
+
+    function clearCode() {
+        enteredCode = enteredCode.slice(0, -1);
+        updateDisplay();
+    }
+
+    function resetCode() {
+        enteredCode = "";
+        updateDisplay();
+    }
+
+    function checkCode() {
+        if (enteredCode === correctCode) {
+            localStorage.setItem(
+                "birthdayUnlocked",
+                "true"
+            );
+            sessionStorage.setItem(
+                "playMusic",
+                "true"
+            );
+            sessionStorage.setItem(
+                "showConfetti",
+                "true"
+            );
+
+            window.location.href =
+                "birthday.html";
+
+        } else {
+
+            showNotification();
+            resetCode();
+
+        }
+    }  
+
+    function showNotification() {
+        document
+            .getElementById("notification")
+            .classList.add("show");
+    }
+
+    function closeNotification() {
+        document
+            .getElementById("notification")
+            .classList.remove("show");
+    }
+
+    /* =====================================
+       KEYBOARD SUPPORT
+    ===================================== */
+
+    document.addEventListener("keydown", function(event) {
+
+        if (/^[0-9]$/.test(event.key)) {
+            addNumber(event.key);
+        }
+
+        else if (event.key === "Backspace") {
+            clearCode();
+        }
+
+        else if (event.key === "Enter") {
+            checkCode();
+        }
+
+        else if (event.key === "Escape") {
+            resetCode();
+        }
+
+    });
+
+    </script>
+
+</body>
+</html>
