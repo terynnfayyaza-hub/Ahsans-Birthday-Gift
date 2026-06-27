@@ -1,4 +1,28 @@
 /* ==========================================
+   CUSTOM FONTS
+========================================== */
+@font-face {
+    font-family: "Glorify DEMO";
+    src: url("font/Glorifydemo-BW3J3.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Allegretto Script One";
+    src: url("font/Allegretto Script One Allegretto Script One.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("font/ARIAL.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================
    COLOR PALETTE
 ========================================== */
 :root{
@@ -25,7 +49,7 @@
 
     box-sizing:border-box;
 
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 
     outline:none;
     border:none;
@@ -175,7 +199,7 @@ header .icons a:hover{
 
 .small-text{
     color:white;
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
     font-size:1rem;
     font-weight:600;
     margin-bottom:.8rem;
@@ -216,7 +240,7 @@ header .icons a:hover{
 
     font-weight:800;
 
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
 }
 
 /* ==========================================
@@ -226,7 +250,7 @@ header .icons a:hover{
     margin-top:1rem;
     width:fit-content;
 
-    font-family: "Arial", Helvetica, sans-serif; /* UPDATED */
+    font-family: "Arial"; /* UPDATED */
     font-size:1.2rem;
 
     color:white; /* Spotify-style contrast */
@@ -277,7 +301,7 @@ header .icons a:hover{
     margin-top:1rem;
     width:fit-content;
 
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
     font-size:1.2rem;
     color: linen; /* fixed invalid var(linen) */
 
