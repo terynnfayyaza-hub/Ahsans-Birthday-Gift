@@ -93,7 +93,7 @@ body{
 /* TEXT */
 h1{
     font-size: clamp(1.5rem, 2.2vw, 2.3rem);
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
 
     color: var(--wine-plum);
 
@@ -106,7 +106,7 @@ h1{
 
 p {
     font-size: 40px;
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
     color: var(--wine-plum);
 }
 
@@ -245,12 +245,12 @@ p {
 
 #screen3 h1{
     margin-top:2px;
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
 }
 
 .flatpickr-calendar,
 .flatpickr-calendar *{
-    font-family:Arial, Helvetica, sans-serif !important;
+    font-family: "Arial";
 }
 
 /* Pink border around calendar */
@@ -283,7 +283,7 @@ p {
     border-radius:10px;
 
     font-size:1rem;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: "Arial";
 
     background:white;
     color:var(--wine-plum);
@@ -363,7 +363,7 @@ p {
     gap: 10px;
 }
 #final-title{
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
 }
 #screen4 h1{
     margin-top:-30px;
@@ -392,7 +392,7 @@ p {
 .date-label{
     font-size:1.1rem;
     font-weight:700;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial";
 
     margin-bottom:10px;
 }
@@ -400,7 +400,7 @@ p {
 .date-info{
     font-size:1.1rem;
     line-height:1.2;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial";
 }
 
 .final-buttons{
