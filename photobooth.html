@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Luma Photobooth</title>
+
+        <link rel="stylesheet" href="photobooth.css">
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    </head>
+
+    <body>
+
+        <!-- ==========================================
+        HEADER
+        ========================================== -->
+
+        <header>
+
+            <input type="checkbox" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+
+            <a href="index.html" class="logo">
+                Sincerely, from Fayyaz<span>.</span>
+            </a>
+
+            <div class="icons">
+                <a href="birthday.html" class="fas fa-house"></a>
+                <p>|</p>
+                <a href="favorite.html" class="fas fa-heart"></a>
+                <p>|</p>
+                <a href="playlist.html" class="fas fa-music"></a>
+                <p>|</p>
+                <a href="game.html" class="fas fa-dice"></a>
+                <p>|</p>
+                <a href="photobooth.html" class="fas fa-camera"></a>
+            </div>
+
+        </header>
+
+        <!-- ==========================================
+        PHOTOBOOTH
+        ========================================== -->
+
+        <main class="photobooth-container">
+
+            <!-- ======================================
+            CAMERA
+            ======================================= -->
+
+            <section class="camera-section">
+
+                <h1>LUMA PHOTOBOOTH</h1>
+
+                <div class="camera-box">
+
+                    <video id="camera" autoplay playsinline muted></video>
+
+                    <canvas id="captureCanvas"></canvas>
+
+                    <div id="flash"></div>
+
+                    <!-- Countdown -->
+                    <div id="countdown" class="countdown hidden">
+                        3
+                    </div>
+
+                </div>
+
+                <div class="camera-buttons">
+
+                    <button id="takePhoto">
+                        <i class="fa-solid fa-camera"></i>
+                        Start Camera
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+            CONTROLS
+            ======================================= -->
+
+            <section class="control-section">
+
+                <!-- Strip Selection -->
+
+                <div class="selector-card">
+
+                    <h2>Choose Strip</h2>
+
+                    <div class="strip-grid">
+
+                        <div
+                            class="strip-option active"
+                            data-strip="1"
+                            data-photos="4">
+
+                            <img src="assets/frame1.png">
+
+                            <p>Vertical • 4 Photos</p>
+
+                        </div>
+
+                        <div
+                            class="strip-option"
+                            data-strip="2"
+                            data-photos="3">
+
+                            <img src="assets/frame2.png">
+
+                            <p>Horizontal • 3 Photos</p>
+
+                        </div>
+
+                        <div
+                            class="strip-option"
+                            data-strip="3"
+                            data-photos="3">
+
+                            <img src="assets/frame3.png">
+
+                            <p>Vertical • 3 Photos</p>
+
+                        </div>
+
+                        <div
+                            class="strip-option"
+                            data-strip="4"
+                            data-photos="4">
+
+                            <img src="assets/frame4.png">
+
+                            <p>Vertical • 4 Photos</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Filter Selection -->
+
+                <div class="selector-card">
+
+                    <h2>Choose Filter</h2>
+
+                    <select id="filterSelect">
+                        <option value="none">Normal</option>
+                        <option value="vintage">Vintage</option>
+                        <option value="bw">Black & White</option>
+                        <option value="warm">Warm</option>
+                        <option value="film">Film</option>
+                        <option value="dream">Dreamy</option>
+                        <option value="sepia">Sepia</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ==========================================
+        FINAL PREVIEW
+        ========================================== -->
+
+        <section class="final-preview">
+
+            <h2>Final Preview</h2>
+
+            <div class="strip-preview">
+
+                <canvas id="stripCanvas"></canvas>
+
+            </div>
+
+            <div class="preview-actions">
+
+                <button
+                    id="downloadStrip"
+                    disabled>
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download Strip
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+            GLOBAL STATE
+            ========================================== -->
+            <script src="photobooth.js"></script>
+            <script src="photobooth-camera.js"></script>
+            <script src="photobooth-audio.js"></script>
+            <script src="photobooth-filter.js"></script>
+            <script src="photobooth-stripTemplates.js"></script>
+            <script src="photobooth-editor.js"></script>
+            <script src="photobooth-download.js"></script>
+            <script src="photobooth-ui.js"></script>
+
+    </body>
+
+</html>

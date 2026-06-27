@@ -1,0 +1,1411 @@
+/* ==========================================
+   COLOR PALETTE
+========================================== */
+:root{
+
+    --aldmond-silk: #e3b5a4;
+    --lobster-pink: #d44d5c;
+    --wine-plum: #773344;
+    --linen: #f5e9e2;
+
+    --white-color:#fff;
+    --black-color:#000;
+    --gray-color:#888;
+    --light-gray-color:#ececec;
+
+    /* NEW COLORS */
+
+    --card-color:#fffaf7;
+    --soft-shadow:0 12px 30px rgba(0,0,0,.12);
+    --button-shadow:0 8px 18px rgba(0,0,0,.15);
+    --border-radius:22px;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    text-decoration:none;
+
+    outline:none;
+    border:none;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    transition:.3s ease;
+
+}
+
+html{
+
+    font-size:100%;
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    min-height:100vh;
+
+    background:url("star2-bg.PNG");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    padding-top:8rem;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#fff;
+
+    padding:1.5rem 4%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:1000;
+
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header #toggler{
+    display:none;
+}
+
+header .fa-bars{
+    font-size:1.5rem;
+    color:black;
+    padding:.5rem 1.5rem;
+    cursor:pointer;
+    display:none;
+}
+
+header .logo{
+    font-size:3rem;
+    font-family:Allegretto Script One;
+    color:var(--lobster-pink);
+    font-weight:bolder;
+}
+
+header .logo:hover{
+    font-size:3.1rem;
+    color:black;
+}
+
+header .icons{
+    display:flex;
+    gap:1rem;
+}
+
+header .icons a{
+    font-size:1.3rem;
+    color:black;
+}
+
+header .icons a:hover{
+    font-size:1.4rem;
+    color:var(--lobster-pink);
+}
+
+/* ==========================================
+   PHOTOBOOTH CONTAINER
+========================================== */
+
+.photobooth-container{
+
+    width:95%;
+    max-width:1600px;
+
+    margin:2rem auto 4rem auto;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+
+    gap:2rem;
+
+}
+
+/* ==========================================
+   LEFT PANEL
+========================================== */
+
+.camera-section{
+
+    background:var(--linen);
+
+    border-radius:var(--border-radius);
+
+    box-shadow:var(--soft-shadow);
+
+    padding:2rem;
+
+}
+
+.camera-section h1{
+
+    text-align:center;
+
+    font-size:2.7rem;
+
+    color:var(--wine-plum);
+
+    margin-bottom:2rem;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================
+   RIGHT PANEL
+========================================== */
+
+.control-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.progress-card,
+.selector-card{
+
+    background:var(--card-color);
+
+    border-radius:var(--border-radius);
+
+    padding:1.5rem;
+
+    box-shadow:var(--soft-shadow);
+
+}
+
+.progress-card h2,
+.selector-card h2{
+
+    color:var(--wine-plum);
+
+    margin-bottom:1rem;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   FINAL PREVIEW
+========================================== */
+
+.final-preview{
+
+    width:95%;
+    max-width:1600px;
+
+    margin:0 auto 4rem auto;
+
+    background:var(--linen);
+
+    border-radius:var(--border-radius);
+
+    box-shadow:var(--soft-shadow);
+
+    padding:2rem;
+
+}
+
+.final-preview h2{
+
+    text-align:center;
+
+    color:var(--wine-plum);
+
+    margin-bottom:2rem;
+
+    font-size:2rem;
+
+}
+
+.strip-preview{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#stripCanvas{
+
+    max-width:100%;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:var(--soft-shadow);
+
+}
+
+/* ==========================================
+   CAMERA BOX
+========================================== */
+
+.camera-box{
+
+    position:relative;
+
+    width:100%;
+    aspect-ratio:4/3;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#000;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+   LIVE CAMERA
+========================================== */
+
+#camera{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transform:scaleX(-1);
+
+    background:black;
+
+}
+
+/* ==========================================
+   HIDDEN CAPTURE CANVAS
+========================================== */
+
+#captureCanvas{
+
+    display:none;
+
+}
+
+/* ==========================================
+   FLASH EFFECT
+========================================== */
+
+#flash{
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+#flash.active{
+
+    animation:cameraFlash .35s ease;
+
+}
+
+@keyframes cameraFlash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    text-shadow: 0 0 20px black;
+}
+
+#countdown.show {
+    opacity: 1;
+}
+
+#countdown.hidden {
+    display: none;
+}
+
+@keyframes countdownPop{
+
+    0%{
+
+        transform:translate(-50%,-50%) scale(.4);
+
+        opacity:0;
+
+    }
+
+    25%{
+
+        transform:translate(-50%,-50%) scale(1.25);
+
+        opacity:1;
+
+    }
+
+    75%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translate(-50%,-50%) scale(.7);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   CAMERA BUTTONS
+========================================== */
+
+.camera-buttons{
+
+    margin-top:2rem;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.2rem;
+
+    flex-wrap:wrap;
+
+}
+
+.camera-buttons button{
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.7rem;
+
+    box-shadow:var(--button-shadow);
+
+}
+
+.camera-buttons button i{
+
+    font-size:1rem;
+
+}
+
+/* ==========================================
+   START CAMERA BUTTON
+========================================== */
+
+#startCamera{
+
+    background:var(--wine-plum);
+
+}
+
+#startCamera:hover{
+
+    background:#5e2433;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   TAKE PHOTO BUTTON
+========================================== */
+
+#takePhoto{
+
+    background:var(--lobster-pink);
+
+}
+
+#takePhoto:hover{
+
+    background:#c73d4f;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   BUTTON ACTIVE
+========================================== */
+
+.camera-buttons button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ==========================================
+   DISABLED BUTTON
+========================================== */
+
+.camera-buttons button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/* ==========================================
+   CAMERA READY BORDER
+========================================== */
+
+.camera-box.ready{
+
+    border:6px solid var(--lobster-pink);
+
+}
+
+/* ==========================================
+   SHUTTER SHAKE
+========================================== */
+
+.camera-box.capture{
+
+    animation:cameraShake .18s;
+
+}
+
+@keyframes cameraShake{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    25%{
+
+        transform:translateX(-6px);
+
+    }
+
+    50%{
+
+        transform:translateX(6px);
+
+    }
+
+    75%{
+
+        transform:translateX(-4px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ==========================================
+   LOADING CAMERA
+========================================== */
+
+.camera-loading{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    background:rgba(0,0,0,.7);
+
+    color:white;
+
+    font-size:1.2rem;
+
+}
+
+.camera-loading i{
+
+    font-size:2.5rem;
+
+    animation:spin 1.5s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   FIX: PREVIEW GRID SEPARATION + STYLE
+========================================== */
+
+.photo-preview-grid {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed rgba(119, 51, 68, 0.2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.photo-preview-grid .preview-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 0.8rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+}
+
+.photo-preview-grid .preview-card:hover {
+    transform: translateY(-3px);
+}
+
+.photo-preview-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ==========================================
+   PREVIEW CARD
+========================================== */
+
+.preview-card{
+
+    background:var(--white-color);
+
+    border-radius:18px;
+
+    padding:1rem;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.preview-card img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    background:#ececec;
+
+    border:3px solid var(--light-gray-color);
+
+}
+
+.preview-card img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ==========================================
+   RETAKE BUTTON
+========================================== */
+
+.retake-btn{
+
+    width:100%;
+
+    padding:.8rem;
+
+    border-radius:999px;
+
+    background:var(--wine-plum);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:.95rem;
+
+}
+
+.retake-btn:hover{
+
+    background:#5f2a39;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   STRIP GRID
+========================================== */
+
+.strip-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+}
+
+/* ==========================================
+   STRIP OPTION
+========================================== */
+
+.strip-option{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:.8rem;
+
+    border:3px solid transparent;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.strip-option:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--aldmond-silk);
+
+}
+
+.strip-option.active{
+
+    border-color:var(--lobster-pink);
+
+    box-shadow:0 0 0 5px rgba(212,77,92,.15);
+
+}
+
+.strip-option img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:contain;
+
+}
+
+.strip-option p{
+
+    font-size:.95rem;
+
+    font-weight:bold;
+
+    color:var(--wine-plum);
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   FILTER SELECT
+========================================== */
+
+#filterSelect{
+
+    width:100%;
+
+    padding:1rem;
+
+    border-radius:15px;
+
+    background:white;
+
+    border:2px solid var(--aldmond-silk);
+
+    font-size:1rem;
+
+    color:var(--wine-plum);
+
+    cursor:pointer;
+
+}
+
+#filterSelect:hover{
+
+    border-color:var(--lobster-pink);
+
+}
+
+/* ==========================================
+   GENERATE & DOWNLOAD BUTTONS
+========================================== */
+
+#generateStrip,
+#downloadStrip{
+
+    width:100%;
+
+    padding:1rem;
+
+    margin-top:.8rem;
+
+    border-radius:999px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    box-shadow:var(--button-shadow);
+
+}
+
+#generateStrip{
+
+    background:var(--lobster-pink);
+
+}
+
+#generateStrip:hover{
+
+    background:#c73d4f;
+
+    transform:translateY(-3px);
+
+}
+
+#downloadStrip{
+
+    background:var(--wine-plum);
+
+}
+
+#downloadStrip:hover{
+
+    background:#5d2d38;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   BUTTON PRESS
+========================================== */
+
+#generateStrip:active,
+#downloadStrip:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================================
+   DISABLED BUTTON
+========================================== */
+
+#generateStrip:disabled,
+#downloadStrip:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================
+   SELECTOR CARD SPACING
+========================================== */
+
+.selector-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.selector-card:last-child{
+
+    gap:.8rem;
+
+}
+
+/* ==========================================
+   FINAL PREVIEW
+========================================== */
+
+.final-preview {
+    display: block;
+    margin-top: 30px;
+}
+
+.strip-preview {
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: white;
+    border: 8px solid white;
+    border-radius: 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,.18);
+}
+
+#stripCanvas {
+    width: 360px;
+    height: auto;
+
+    display: block;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+/* ==========================================
+   FADE IN ANIMATION
+========================================== */
+
+.fade-in{
+
+    animation:fadeIn .6s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   SCALE IN
+========================================== */
+
+.scale-in{
+
+    animation:scaleIn .35s ease;
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   POP ANIMATION
+========================================== */
+
+.pop{
+
+    animation:pop .25s ease;
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.9);
+
+    }
+
+    60%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+.preview-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.selector-card{
+
+    transition:.3s;
+
+}
+
+.selector-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--linen);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--wine-plum);
+
+    border-radius:100px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--lobster-pink);
+
+}
+
+/* ==========================================
+   UTILITY CLASSES
+========================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.invisible{
+
+    visibility:hidden;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width:1100px){
+
+    .photobooth-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .camera-section{
+
+        order:1;
+
+    }
+
+    .control-section{
+
+        order:2;
+
+    }
+
+    .photo-preview-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .strip-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding-top:7rem;
+
+    }
+
+    header{
+
+        padding:1rem 5%;
+
+    }
+
+    header .logo{
+
+        font-size:2rem;
+
+    }
+
+    .photobooth-container{
+
+        width:95%;
+
+        gap:1.2rem;
+
+    }
+
+    .camera-section{
+
+        padding:1.3rem;
+
+    }
+
+    .camera-section h1{
+
+        font-size:2rem;
+
+    }
+
+    .camera-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .camera-buttons button{
+
+        width:100%;
+
+    }
+
+    .photo-preview-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .strip-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .preview-card img{
+
+        aspect-ratio:1/1;
+
+    }
+
+    .strip-option img{
+
+        height:220px;
+
+    }
+
+    .selector-card{
+
+        padding:1.2rem;
+
+    }
+
+    #countdown{
+
+        width:100px;
+
+        height:100px;
+
+        font-size:3.5rem;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:500px){
+
+    .camera-section h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .progress-card h2,
+    .selector-card h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .strip-preview{
+
+        min-height:400px;
+
+        padding:1rem;
+
+    }
+
+    #stripCanvas{
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+}
+
+/* ==========================================
+   REDUCE MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto;
+
+    }
+
+}
+
+/* ==========================================
+   FINAL PREVIEW
+========================================== */
+.final-preview {
+    display: block;
+    margin-top: 30px;
+}
+
+.strip-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#stripCanvas {
+    width: 360px;      /* visible preview size */
+    height: auto;
+    border: 2px solid #ddd;
+    background: white;
+}
