@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: "Arial";
-    src: url("font/ARIAL.ttf") format("truetype");
+    src: url("font/ARIAL.TTF") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
