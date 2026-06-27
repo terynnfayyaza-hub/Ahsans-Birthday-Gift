@@ -1,4 +1,28 @@
 /* ==========================================
+   CUSTOM FONTS
+========================================== */
+@font-face {
+    font-family: "Glorify DEMO";
+    src: url("font/Glorifydemo-BW3J3.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Allegretto Script One";
+    src: url("font/Allegretto Script One Allegretto Script One.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("font/ARIAL.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================
    COLOR PALETTE
 ========================================== */
 
@@ -245,7 +269,7 @@ header .icons a:hover{
 }
 
 .card-back p{
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Arial";
     text-transform:none;
 
     line-height:1.7;
