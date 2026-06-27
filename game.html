@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+        <title>Card Collection Game</title>
+
+        <link rel="stylesheet" href="game.css">
+
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    </head>
+
+    <body>
+
+    <!-- HEADER -->
+    <header>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="index.html" class="logo">
+        Sincerely, from Fayyaz<span>.</span>
+        </a>
+
+        <div class="icons">
+        <a href="birthday.html" class="fas fa-house"></a>
+        <p>|</p>
+        <a href="favorite.html" class="fas fa-heart"></a>
+        <p>|</p>
+        <a href="playlist.html" class="fas fa-music"></a>
+        <p>|</p>
+        <a href="game.html" class="fas fa-dice"></a>
+        <p>|</p>
+        <a href="photobooth.html" class="fas fa-camera"></a>
+        </div>
+    </header>
+
+    <!-- GAME CONTAINER -->
+    <section class="game-container">
+        <div class="draw-area">
+            <div class="draw-slots">
+                <div class="draw-card">
+                    <img id="draw1" src="cards/cover.png">
+                </div>
+
+                <div class="draw-card">
+                    <img id="draw2" src="cards/cover.png">
+                </div>
+
+                <div class="draw-card">
+                    <img id="draw3" src="cards/cover.png">
+                </div>
+            </div>
+
+                <button id="drawBtn">
+                    Draw Your Cards
+                </button>
+        </div>
+
+        <hr>
+            <div class="collection-title">
+                <h1>50 Reasons Why I Love You</h1>
+                <p>
+                    Collect all 50 cards to discover every reason ❤️
+                </p>
+            </div>
+
+            <div id="collections">
+
+            <h2>Common</h2>
+            <div id="common-grid" class="collection-grid"></div>
+
+            <h2>Rare</h2>
+            <div id="rare-grid" class="collection-grid"></div>
+
+            <h2>Epic</h2>
+            <div id="epic-grid" class="collection-grid"></div>
+
+            <h2>Legendary</h2>
+            <div id="legendary-grid" class="collection-grid"></div>
+
+            </div>
+
+    </section>
+
+    <!-- CARD POPUP -->
+    <div id="popup" class="popup">
+
+        <img
+            id="popupCard"
+            class="popup-card"
+            onclick="event.stopPropagation()"
+        >
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="game.js"></script>
+
+    </body>
+</html>

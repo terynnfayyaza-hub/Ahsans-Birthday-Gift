@@ -1,0 +1,384 @@
+/* ==========================================
+   COLOR PALETTE
+========================================== */
+:root{
+    --aldmond-silk: #e3b5a4;
+    --lobster-pink: #d44d5c;
+    --wine-plum: #773344;
+    --linen: #f5e9e2;
+
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: #aaa;
+    --light-gray-color: #eee;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+*{
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline:none;
+    border:none;
+
+    text-decoration:none;
+
+    transition:.4s linear;
+}
+
+html{
+    font-size:100%;
+    scroll-behavior:smooth;
+    scroll-padding-top:6rem;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+
+    background:url("star2-bg.PNG");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#fff;
+
+    padding:1.5rem 4%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:1000;
+
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header #toggler{
+    display:none;
+}
+
+header .fa-bars{
+    font-size:1.5rem;
+    color:black;
+    padding:.5rem 1.5rem;
+    cursor:pointer;
+    display:none;
+}
+
+header .logo{
+    font-size:3rem;
+    font-family:Allegretto Script One;
+    color:var(--lobster-pink);
+    font-weight:bolder;
+}
+
+header .logo:hover{
+    font-size:3.1rem;
+    color:black;
+}
+
+header .icons{
+    display:flex;
+    gap:1rem;
+}
+
+header .icons a{
+    font-size:1.3rem;
+    color:black;
+}
+
+header .icons a:hover{
+    font-size:1.4rem;
+    color:var(--lobster-pink);
+}
+
+/* ==========================================
+GAME CONTAINER
+========================================== */
+
+.game-container{
+    width:95%;
+    max-width:1400px;
+
+    margin-top:10rem;
+    margin-bottom:4rem;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #a86b79 0%,
+        #915160 20%,
+        #864352 40%,
+        #7b3848 60%,
+        #773344 80%,
+        #5f2736 100%
+    );
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ==========================================
+DRAW SECTION
+========================================== */
+
+.draw-area{
+    background:transparent;
+    padding:4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.draw-slots{
+    display:flex;
+    gap:3rem;
+    margin-bottom:3rem;
+}
+
+.draw-card{
+
+    width:270px;
+    height:175px;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
+
+.draw-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#drawBtn{
+
+    background:var(--wine-plum);
+
+    color:white;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    padding:1rem 2rem;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+#drawBtn:hover{
+    transform:scale(1.05);
+}
+
+hr{
+    border:none;
+    height:2px;
+    background:rgba(245,233,226,.35);
+}
+
+/* ==========================================
+COLLECTION TITLE
+========================================== */
+
+.collection-title{
+    text-align:center;
+    padding:3rem 2rem 1rem;
+}
+
+.collection-title h1{
+    color:var(--linen);
+
+    font-family: Glorify DEMO;
+    font-size:3rem;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    margin-bottom:.5rem;
+}
+
+.collection-title p{
+    color:rgba(245,233,226,.8);
+    font-size:1.1rem;
+}
+
+/* ==========================================
+COLLECTION
+========================================== */
+
+#collections{
+    padding:3rem;
+}
+
+#collections h2{
+    margin-top:2rem;
+    margin-bottom:0.7rem;
+
+    color:var(--linen);
+
+    font-size:1.6rem;
+}
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(170px,1fr));
+
+    gap:1rem;
+}
+
+.collection-card{
+    cursor: pointer;
+    border-radius:5px;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:
+    0 6px 15px rgba(0,0,0,.2);
+
+}
+
+.collection-card:hover{
+    transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+.collection-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ==========================================
+CARD POPUP
+========================================== */
+
+.popup{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(4px);
+}
+
+.popup-card{
+
+    width:min(650px,85vw);
+
+    border-radius:5px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.45);
+
+    cursor:default;
+
+    animation:
+    cardPop .45s ease-out;
+}
+
+@keyframes cardPop{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(.4)
+        rotate(-8deg);
+
+    }
+
+    70%{
+
+        transform:
+        scale(1.05)
+        rotate(2deg);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        rotate(0deg);
+
+    }
+
+}
+
+/* ==========================================
+NEW CARD POPUP
+========================================== */
+@keyframes glow{
+
+    0%{
+        box-shadow:0 0 0 rgba(255,255,255,0);
+    }
+
+    50%{
+        box-shadow:0 0 25px gold;
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(255,255,255,0);
+    }
+
+}
+
+.new-card{
+    animation:glow 2s ease-in-out;
+}
