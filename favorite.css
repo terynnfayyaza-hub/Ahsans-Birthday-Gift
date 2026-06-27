@@ -21,7 +21,7 @@
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
-    font-family: Glorify DEMO;
+    font-family: "Glorify DEMO";
     outline:none; border: none;
     text-decoration: none;
     text-transform: capitalize;
@@ -114,13 +114,13 @@ header .fa-bars{
 
 header .logo{
     font-size: 3rem;
-    font-family: Allegretto Script One;
+    font-family: "Allegretto Script One";
     color: var(--lobster-pink);
     font-weight: bolder;
 }
 header .logo:hover{
     font-size: 3.1rem;
-    font-family: Allegretto Script One;
+    font-family: "Allegretto Script One";
     color: black;
     font-weight: bolder;
 }
@@ -245,7 +245,7 @@ header .icons a:hover{
 }
 
 .card-back p{
-    font-family:Arial, sans-serif;
+    font-family: "Arial";
     text-transform:none;
 
     line-height:1.7;
